@@ -149,16 +149,16 @@
 
 
 
-<div class="container-fluid "><div class="page-header"><h1>Pannels in Bootstrap</h1></div>
+<div class="container-fluid "><div class="page-header"><h1>Pannels in Bootstrap</h1><p>Click the header to see Animation</p></div>
   <div class="row">
 
     <div class="col-sm-6">
       <div class="panel panel-default">
         <div class="panel-heading"  >
-          <a data-toggle="panel" href="#collapse1">Pannel 1: Default</a>
+          <h1 id="collapse1">Pannel 1: Default</h1>
         </div>
-        <div class="panel-collapse collapse" id="collapse1">
-        <div class="panel-body">
+        <div class="panel-collapse collapse" id="collapse-show1" >
+        <div class="panel-body" >
          Pannel 1 : body         
         </div>
         <div class="panel-footer">
@@ -171,19 +171,41 @@
     <div class="col-sm-6">
       <div class="panel panel-primary">
         <div class="panel-heading">
-         <h1> Pannel 2: Primary</h1>
+         <h1 id="collapse2"> Pannel 2: Primary</h1>
         </div>
+        <div class="panel-collapse" id="collapse-show2">
         <div class="panel-body">
          Pannel 2 : body         
         </div>
          <div class="panel-footer">
           <h4>Footer</h4>
         </div>
+        </div>
       </div>
     </div>  
       
 </div>
 </div>
+
+<!--jquery for panel-->
+<script >
+	$(document).ready(function(){
+		$("#collapse1").click(function(){
+			$("#collapse-show1").slideToggle();
+			
+		});
+	});
+</script>
+
+<script >
+	$(document).ready(function(){
+		$("#collapse2").click(function(){
+			$("#collapse-show2").slideToggle();
+			
+		});
+	});
+</script>
+
 
 <div class="container">
   <div class="page-header">
@@ -196,7 +218,7 @@
     </div>
      <div class="alert alert-success fade in">
       This Success alert
-       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+       <a href="#" class="close" data-dismiss="alert" >&times;</a>
     </div>
     
   </div>
@@ -256,7 +278,27 @@
   
 </div>
 
+<!--Jquery example-->
+<div class="container" >
+	<div class="page-header"><h1>Animation By jquery</h1></div>
+	<div class="col-sm-6">
+	<img  id="animation"  width=200px height=200px src="img/bf1.jpg" alt="Battlefeild">
+	</div>
+	<button type="button" class="btn btn-primary " id="animate"><p>Animate</p></button>
+	
+</div>
 
+<script >
+	$(document).ready(function(){
+		$("#animate").click(function(){
+			$("#animation").animate({height : "400px"},"slow");
+			$("#animation").animate({width : "400px"},"slow");
+			$("#animation").animate({height : "200px"},"slow");
+			$("#animation").animate({width : "200px"},"slow");
+			
+		});
+	});
+</script>
 
 
 
@@ -346,7 +388,7 @@
    <div class="container">
     <div class="navbar-brand pull-left">COPYRIGHT &COPY FOSSASIA WEB DEVELOPERS</div>
       <div class="navbar-text pull-right ">
-        <a href="#"><i class="fa fa-twitter " ></i></a>
+        <button class="btn btn-social btn-facebook"><i class="fa fa-facebook " ></i></button>
       </div>
      
    </div>
